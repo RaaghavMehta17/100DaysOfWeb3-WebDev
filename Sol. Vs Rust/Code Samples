@@ -1,0 +1,8 @@
+RUST: In terms of Memory Management
+In Rust, each data has one owner who decides how it's used.When someone wants to use it temporarily,they can borrow it but only while the owner is still around. This makes sure we don't waste memory and keeps everything safe. 
+Rust is a systems programming language that places a strong emphasis on memory safety, while Solidity is a smart contract language that relies on the Ethereum Virtual Machine (EVM) for managing memory.
+Rust provides advanced features such as ownership, borrowing, and lifetimes to ensure that memory is managed safely and efficiently. For example, in Rust, you can define a struct that owns a piece of memory and ensure that it is only accessed in a safe and controlled manner.
+Solidity:
+IT has limited memory management capabilities and relies on the EVM to manage memory.The EVM uses a stack-based memory model where data is stored in a linear array of 256-bit "slots." This can make it challenging to manage memory efficiently and can lead to issues such as memory leaks.
+In Solidity,there are two types of variables: ones that live forever on the blockchain and ones that only exist temporarily in the computer's memory. It's like having a safe deposit box for important things and a whiteboard for writing notes that you erase later. 
+It does not have a sophisticated memory management system like Rust. Solidity uses a system of storage and memory variables to manage memory. Storage variables are variables that are permanently stored on the blockchain, while memory variables are variables that are stored temporarily in memory. Solidity also has limitations on the amount of memory that can be used in a contract.
