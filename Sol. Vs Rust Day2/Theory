@@ -1,1 +1,10 @@
+Basic Differences between the code samples of Rust smart contracts vs Solidity smart contracts
 
+
+Rust smart contracts start by importing the ink_lang module that provides necessary macros & attributes for contract definition.
+Solidity smart contracts start with the SPDX-License identifier & the pragma solidity directive with the version specifying the solidity version used.
+
+Rust uses #[contract] attribute to mark the module given by 'mod hello_world' as a contract as shown in the example contract.
+In solidity, a smart contract is directly declared by using the keyword 'contract' followed by the name of the contract.
+
+In Rust smart contracts, there are no automatic getter functions like in Solidity, where you can simply mark a variable as 'public' or 'private'. Instead you have to manually define functions within the contract to make certain variables accessible from outside the contract. 
