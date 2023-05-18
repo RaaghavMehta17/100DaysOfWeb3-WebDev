@@ -1,1 +1,22 @@
+->Code optimisation Techniques for Solidity Smart Contracts
+(1) Minimize storage read and writes.
+Limit unnecessary storage operations, instead of writing to storage every time, use a temporary variable for calculations. Update the storage only when needed. This way, you'll improve performance and reduce gas usage.
+(2) Use memory instead of Storage
+Storing data in memory instead of storage helps save gas costs. It's like keeping things handy on a temporary shelf rather than storing them in a far-away closet. This works well for temporary stuff that doesn't need to stay for long.
+(3) Use pure and view functions
+View functions don't change data, and pure functions don't read or change data either. These modifiers help save gas by showing that no data changes happen. It's like telling a computer that a function is safe to use without making any changes
+
+->Code Optimisation Techniques for Rust Ink_lang smart contracts
+(1) Avoiding Redundant State Updates:
+In the unoptimized version the state variable is always updated with the new value, even if it's the same as before. This wastes resources. In the optimized version we check if the new value is different from the current one before updating the state, saving resources.
+(2) Using View Functions for Read-Only Operations:
+In the unoptimized example calling a function to read a variable consumes gas. But in the optimized example we use a special attribute to mark the it as read-only, so clients can call it without paying gas. It's like getting information from a book without spending any energy.
+(3) Use Constants Instead of Repeated Computations:
+In the unoptimized code unnecessary work is done by calculating the fee percentage over and over. This slows things down. In the optimized code, we set a fixed fee percentage beforehand, so we don't have to calculate it repeatedly. This makes the code faster and more efficient.
+
+
+
+
+
+The theory listed above refers to the code samples, so take a look at those for better understaning.
 
