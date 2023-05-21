@@ -1,0 +1,21 @@
+Ensuring/Implementing Smart Contract Security
+
+(1) Access Control
+To protect important functions or sensitive data in a smart contract, we can use access control mechanisms like role-based access or permission modifiers. These techniques limit access to only authorized users, preventing unauthorized actions.
+
+->Access Control In Solidity
+In the sample code, the onlyOwner modifier is defined, which restricts access to functions that use this modifier to only the contract owner. Here we also use the 'require' keyword which used to validate certain conditions within functions.
+->Access Control In Rust
+In the sample code, the 'access_control' attribute with the owner argument ensures that only the contract owner can call the change_owner function. Other accounts attempting to call it will encounter an access control error.
+
+(2) Validate External Contract Addresses
+->When interacting with external contracts, validate the addresses to ensure they are valid and not malicious. Avoid using call.value() without proper checks and prefer the newer transfer() or send() functions.
+
+(3) Avoidance of Reentrancy Attacks:
+->Reentrancy attacks are a type of vulnerability in smart contracts where an external contract can repeatedly call back into the target contract before the previous execution is completed. This can be used maliciously to manipulate contract state and potentially steal funds.
+->For Solidity,
+Use the Checks-Effects-Interactions pattern to prevent reentrancy attacks.
+Utilize the nonReentrant modifier to restrict reentrant calls to critical functions.
+->To Avoid Reentrancy Attacks in a Rust Smart Contract
+By using the mutex mechanism provided by the Mutex type in Ink! Rust, we ensure that the withdraw function can only be executed once at a time, preventing reentrancy attacks and ensuring the integrity of the contract's state
+
